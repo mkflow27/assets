@@ -59,7 +59,7 @@ async function run(network?: Network) {
 }
 
 async function buildNetworkLists(network: Network) {
-  console.log(`Building ${network} tokenlists\n`);
+  console.log(`\nBuilding ${network} tokenlists`);
   const metadataOverwriteFile = await fs.readFileSync(
     `data/${network}.metadataOverwrite.json`
   );
