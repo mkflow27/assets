@@ -218,12 +218,14 @@ async function getTokenMetadata(
     address
   );
 
+  const EMPTY_LOGO_FALLBACK = 'https://etherscan.io/images/main/empty-token.png'
+
   const name =
     metadataOverwrite.name ?? coingeckoMeta.name ?? onchainMetadata.name;
   const symbol =
     metadataOverwrite.symbol ?? onchainMetadata.symbol ?? coingeckoMeta.symbol;
   const decimals = onchainMetadata.decimals;
-  const logoURI = metadataOverwrite.logoURI ?? coingeckoMeta.logoURI;
+  const logoURI = metadataOverwrite.logoURI ?? coingeckoMeta.logoURI ?? EMPTY_LOGO_FALLBACK;
 
   return {
     address,
